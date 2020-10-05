@@ -36,11 +36,23 @@ const MORSE_TABLE = {
     '----.':  '9',
     '-----':  '0',
 };
-
 function decode(expr) {
-    // write your solution here
+    let result ='';
+    for (let i = 0; i < expr.length; i+= 10) {
+        let char = '';
+        for (let j = 0; j < 10; j+= 2) {
+            const с = '';
+            c = expr.slice(i+j, i+j+2)
+            if (c === '10') {
+                char += '.'
+            } else if (c === '11') {
+                char += '-'
+            }
+        }
+        result += MORSE_TABLE[char]
+    }
+    return result.replace(/undefined/g, ' ');
 }
-
 module.exports = {
     decode
 }
